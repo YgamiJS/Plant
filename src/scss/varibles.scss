@@ -1,0 +1,49 @@
+$graphit: #081800;
+$graphitBlack: #101c02;
+$greenDark: #418a1c;
+$green: #51c815;
+$darkBlack: #000a01;
+$white: #ffffff;
+$whitebg: #e5e5e5;
+$whitebr: #f7ffec;
+%big {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28.8px;
+  line-height: 29px;
+}
+%medium {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 29px;
+}
+%small {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+%h1 {
+  // font-size: 60.31px;
+  @include adaptiv-font(60.31px, 10px);
+  font-family: "Raleway";
+  line-height: 104.54px;
+  font-weight: 800;
+  color: $graphit;
+}
+%h2 {
+  font-family: "Raleway";
+  font-size: 57px;
+  color: $graphit;
+  line-height: 79.8px;
+  font-weight: 800;
+}
+
+%h3 {
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 51px;
+  color: #081800;
+}
