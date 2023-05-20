@@ -25,8 +25,7 @@ $whitebr: #f7ffec;
   line-height: 22px;
 }
 %h1 {
-  // font-size: 60.31px;
-  @include adaptiv-font(60.31px, 10px);
+  font-size: 60.31px;
   font-family: "Raleway";
   line-height: 104.54px;
   font-weight: 800;
