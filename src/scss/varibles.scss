@@ -6,17 +6,34 @@ $darkBlack: #000a01;
 $white: #ffffff;
 $whitebg: #e5e5e5;
 $whitebr: #f7ffec;
+$maxWidth: 1280;
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(
+    #{$mobSize + px} + #{calc($addSize / 1.5)} *
+      ((100vw - 320px) / #{$maxWidth})
+  );
+}
+
+@mixin adaptiv-lineHeight($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  line-height: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
+}
 %big {
   font-style: normal;
   font-weight: 500;
-  font-size: 28.8px;
-  line-height: 29px;
+  @include adaptiv-font(28.8, 14.4);
+  @include adaptiv-lineHeight(29, 20);
 }
 %medium {
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 18px;
-  line-height: 29px;
+  @include adaptiv-font(18, 16);
+  @include adaptiv-lineHeight(29, 20);
 }
 %small {
   font-family: "Raleway";
@@ -25,24 +42,24 @@ $whitebr: #f7ffec;
   line-height: 22px;
 }
 %h1 {
-  font-size: 60.31px;
   font-family: "Raleway";
-  line-height: 104.54px;
+  @include adaptiv-font(60.31, 30);
+  @include adaptiv-lineHeight(104.54, 50);
   font-weight: 800;
   color: $graphit;
 }
 %h2 {
   font-family: "Raleway";
-  font-size: 57px;
   color: $graphit;
-  line-height: 79.8px;
+  @include adaptiv-font(57, 28);
+  @include adaptiv-lineHeight(79.8, 29);
   font-weight: 800;
 }
 
 %h3 {
   font-family: "Raleway";
   font-weight: 600;
-  font-size: 32px;
-  line-height: 51px;
+  @include adaptiv-font(32, 18);
+  @include adaptiv-lineHeight(51, 24);
   color: #081800;
 }
