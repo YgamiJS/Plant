@@ -196,7 +196,7 @@ body {
     font-family: "Raleway";
     font-weight: 800;
     @include adaptiv-font(67.01, 42);
-    @include adaptiv-lineHeight(78.4, 39.2);
+    @include adaptiv-lineHeight(78.4, 45);
     color: $graphit;
   }
 
